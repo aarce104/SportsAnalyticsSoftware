@@ -6,7 +6,7 @@ import com.google.gson.JsonObject;
  * Created by Abe on 11/2/16.
  */
 public class NFLCpsCollector implements CollectorGeneric {
-    //the
+    //the_
 
     public NFLCpsCollector() {
 
