@@ -7,6 +7,9 @@ import com.google.gson.JsonObject;
  */
 public class NFLCpsCollector implements CollectorGeneric {
 
+    public NFLCpsCollector() {
+
+    }
 
     public JsonObject enrichJson(String jsonStr) {
         return null;
