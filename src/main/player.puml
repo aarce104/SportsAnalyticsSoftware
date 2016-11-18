@@ -1,0 +1,26 @@
+@startuml
+class player
+class team
+class stats
+class OffensiveStats
+class DefensiveStats
+
+
+player --|> team
+player --|> stats
+stats --|> OffensiveStats
+stats --|> DefensiveStats
+OffensiveStats --|> Passing
+OffensiveStats --|> Rushing
+OffensiveStats --|> KickoffReturns
+DefensiveStats --|> Tackling
+DefensiveStats --|> Interceptions
+DefensiveStats --|> PassesDefended
+DefensiveStats --|> Stuffs
+DefensiveStats --|> Fumbles
+DefensiveStats --|> KB
+DefensiveStats --|> l
+
+
+
+@enduml
