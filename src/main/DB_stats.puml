@@ -1,0 +1,105 @@
+@startuml
+class player
+class team
+class stats
+class OffensiveStats
+class DefensiveStats
+
+
+player --|> team
+player --|> stats
+stats --|> GamesPlayed
+stats --|> OffensiveStats
+stats --|> DefensiveStats
+stats --|> SpecialTeams
+OffensiveStats --|> Rushing
+OffensiveStats --|> Receiving
+DefensiveStats --|> Tackling
+DefensiveStats --|> Interceptions
+DefensiveStats --|> PassesDefended
+DefensiveStats --|> Stuffs
+DefensiveStats --|> Fumbles
+
+class player {
+ID
+LastName
+FirstName
+JerseyNumber
+Position
+}
+
+class team {
+ID
+City
+Name
+Abbreviation
+}
+
+class Receiving {
+
+}
+
+class Rushing {
+
+}
+
+class Tackling {
+TackleSolo
+TackleTotal
+TackleAst
+Sacks
+SackYds
+Safeties
+}
+
+class Interceptions {
+Interceptions
+IntTD
+IntYds
+IntAverage
+IntLng
+PassesDefended
+}
+
+
+class Stuffs {
+Stuffs
+StuffYds
+}
+
+class Fumbles {
+Fumbles
+FumLost
+FumForced
+FumOwnRec
+FumOppRec
+FumRecYds
+FumTotalRec
+FumTD
+}
+
+class SpecialTeams {
+KB
+KrRet
+KrYds
+KrAvg
+KrLng
+KrTD
+Kr20Plus
+Kr40Plus
+KrFC
+KrFum
+PrRet
+PrYds
+PrAvg
+PrLng
+PrTD
+Pr20Plus
+Pr40Plus
+PrFC
+PrFum
+}
+
+
+
+@enduml
