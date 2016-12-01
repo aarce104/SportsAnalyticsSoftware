@@ -1,0 +1,172 @@
+@startuml
+class player
+class team
+class stats
+class OffensiveStats
+class DefensiveStats
+
+
+player --|> team
+player --|> stats
+stats --|> GamesPlayed
+stats --|> OffensiveStats
+stats --|> DefensiveStats
+stats --|> SpecialTeams
+DefensiveStats --|> Tackling
+DefensiveStats --|> Interceptions
+DefensiveStats --|> PassesDefended
+DefensiveStats --|> Stuffs
+DefensiveStats --|> Fumbles
+DefensiveStats --|> KB
+SpecialTeams --|> KickoffReturns
+SpecialTeams --|> Kickoffs
+SpecialTeams --|> PuntReturns
+SpecialTeams --|> Punts
+SpecialTeams --|> FieldGoals
+SpecialTeams --|> PAT
+
+class player {
+ID
+LastName
+FirstName
+JerseyNumber
+Position
+}
+
+class team {
+ID
+City
+Name
+Abbreviation
+}
+
+class Tackling {
+TackleSolo
+TackleTotal
+TackleAst
+Sacks
+SackYds
+Safeties
+}
+
+class Interceptions {
+Interceptions
+IntTD
+IntYds
+IntAverage
+IntLng
+PassesDefended
+}
+
+
+class Stuffs {
+Stuffs
+StuffYds
+}
+
+class Fumbles {
+Fumbles
+FumLost
+FumForced
+FumOwnRec
+FumOppRec
+FumRecYds
+FumTotalRec
+FumTD
+}
+
+class SpecialTeams {
+
+}
+
+class KickoffReturns {
+KrRet
+KrYds
+KrAvg
+KrLng
+KrTD
+Kr20Plus
+Kr40Plus
+KrFC
+KrFum
+}
+
+class Kickoffs {
+Kickoffs
+KoYds
+KoOOB
+KoAvg
+KoTB
+KoPct
+KoRet
+KoRetYds
+KoRetAvgYds
+KoTD
+KoOS
+KoOSR
+
+}
+
+class PuntReturns {
+PrRet
+PrYds
+PrAvg
+PrLng
+PrTD
+Pr20Plus
+Pr40Plus
+PrFC
+PrFum
+}
+
+class Punts {
+Punts
+PuntYds
+PuntNetYds
+PuntLng
+PuntAvg
+PuntNetAvg
+PuntBlk
+PuntOOB
+PuntDown
+PuntIn20
+PuntIn20Pct
+PuntTB
+PuntTBPct
+PuntFC
+PuntRet
+PuntRetYds
+PuntRetAvg
+}
+
+class FieldGoals {
+FgBlk
+FgMade
+FgAtt
+FgPct
+FgMade1_19
+FgAtt1_19
+Fg1_19Pct
+FgMade20_29
+FgAtt20_29
+Fg20_29Pct
+FgMade30_39
+FgAtt30_39
+Fg30_39Pct
+FgMade40_49
+FgAtt40_49
+Fg40_49Pct
+FgMade50Plus
+FgAtt50Plus
+Fg50PlusPct
+FgLng
+}
+
+class PAT {
+XpBlk
+XpMade
+XpAtt
+XpPct
+
+}
+@enduml

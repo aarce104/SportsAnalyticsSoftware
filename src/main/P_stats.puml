@@ -1,0 +1,123 @@
+@startuml
+
+class player
+class team
+class stats
+class OffensiveStats
+class DefensiveStats
+
+
+player --|> team
+player --|> stats
+stats --|> GamesPlayed
+stats --|> OffensiveStats
+stats --|> DefensiveStats
+stats --|> SpecialTeams
+DefensiveStats --|> Tackling
+DefensiveStats --|> Interceptions
+DefensiveStats --|> PassesDefended
+DefensiveStats --|> Stuffs
+DefensiveStats --|> Fumbles
+DefensiveStats --|> KB
+SpecialTeams --|> KickoffReturns
+SpecialTeams --|> PuntReturns
+SpecialTeams --|> Punts
+
+class player {
+ID
+LastName
+FirstName
+JerseyNumber
+Position
+}
+
+class team {
+ID
+City
+Name
+Abbreviation
+}
+
+class Tackling {
+TackleSolo
+TackleTotal
+TackleAst
+Sacks
+SackYds
+Safeties
+}
+
+class Interceptions {
+Interceptions
+IntTD
+IntYds
+IntAverage
+IntLng
+PassesDefended
+}
+
+
+class Stuffs {
+Stuffs
+StuffYds
+}
+
+class Fumbles {
+Fumbles
+FumLost
+FumForced
+FumOwnRec
+FumOppRec
+FumRecYds
+FumTotalRec
+FumTD
+}
+
+class SpecialTeams {
+
+}
+
+class KickoffReturns {
+KrRet
+KrYds
+KrAvg
+KrLng
+KrTD
+Kr20Plus
+Kr40Plus
+KrFC
+KrFum
+}
+
+class PuntReturns {
+PrRet
+PrYds
+PrAvg
+PrLng
+PrTD
+Pr20Plus
+Pr40Plus
+PrFC
+PrFum
+}
+
+class Punts {
+Punts
+PuntYds
+PuntNetYds
+PuntLng
+PuntAvg
+PuntNetAvg
+PuntBlk
+PuntOOB
+PuntDown
+PuntIn20
+PuntIn20Pct
+PuntTB
+PuntTBPct
+PuntFC
+PuntRet
+PuntRetYds
+PuntRetAvg
+}
+@enduml
