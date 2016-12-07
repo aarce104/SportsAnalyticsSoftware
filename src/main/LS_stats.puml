@@ -25,7 +25,6 @@ SpecialTeams --|> KickoffReturns
 SpecialTeams --|> PuntReturns
 
 class player {
-ID
 LastName
 FirstName
 JerseyNumber
@@ -33,10 +32,13 @@ Position
 }
 
 class team {
-ID
 City
 Name
 Abbreviation
+}
+
+class GamesPlayed {
+"GamesPlayed":"num"
 }
 
 class Receiving {
