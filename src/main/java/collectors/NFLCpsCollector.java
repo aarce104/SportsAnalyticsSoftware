@@ -40,7 +40,7 @@ public class NFLCpsCollector implements CollectorGeneric {
     private final static String PASS_40_PLUS = "Pass40Plus";
     private final static String PASS_SACKS = "PassSacks";
     private final static String PASS_SACK_Y = "PassSackY";
-    private final static String QBR_RATING = "QBRating";
+    private final static String QB_RATING = "QBRating";
 
     private final static String TARGETS = "Targets";
     private final static String RECEPTIONS = "Receptions";
@@ -201,25 +201,25 @@ public class NFLCpsCollector implements CollectorGeneric {
 
         int PassAtt = player.getAsJsonObject(STATS).getAsJsonObject(PASS_ATTEMPTS).get("#text").getAsInt();
         int PassCMP = player.getAsJsonObject(STATS).getAsJsonObject(PASS_COMPLETIONS).get("#text").getAsInt();
-        int PassPCT = player.getAsJsonObject(STATS).getAsJsonObject(PASS_PCT).get("#text").getAsInt();
+        double PassPCT = player.getAsJsonObject(STATS).getAsJsonObject(PASS_PCT).get("#text").getAsDouble();
         int PassYds = player.getAsJsonObject(STATS).getAsJsonObject(PASS_YDS).get("#text").getAsInt();
-        int PassAvg = player.getAsJsonObject(STATS).getAsJsonObject(PASS_AVG).get("#text").getAsInt();
-        int PassYdsPerAtt = player.getAsJsonObject(STATS).getAsJsonObject(PASS_YARDS_PER_ATT).get("#text").getAsInt();
+        double PassAvg = player.getAsJsonObject(STATS).getAsJsonObject(PASS_AVG).get("#text").getAsDouble();
+        double PassYdsPerAtt = player.getAsJsonObject(STATS).getAsJsonObject(PASS_YARDS_PER_ATT).get("#text").getAsDouble();
         int PassTD = player.getAsJsonObject(STATS).getAsJsonObject(PASS_TD).get("#text").getAsInt();
-        int PassTDPct = player.getAsJsonObject(STATS).getAsJsonObject(PASS_TD_PCT).get("#text").getAsInt();
+        double PassTDPct = player.getAsJsonObject(STATS).getAsJsonObject(PASS_TD_PCT).get("#text").getAsDouble();
         int PassInt = player.getAsJsonObject(STATS).getAsJsonObject(PASS_INT).get("#text").getAsInt();
-        int PassIntPct = player.getAsJsonObject(STATS).getAsJsonObject(PASS_INT_PCT).get("#text").getAsInt();
+        double PassIntPct = player.getAsJsonObject(STATS).getAsJsonObject(PASS_INT_PCT).get("#text").getAsDouble();
         int PassLng = player.getAsJsonObject(STATS).getAsJsonObject(PASS_LNG).get("#text").getAsInt();
         int Pass20Plus = player.getAsJsonObject(STATS).getAsJsonObject(PASS_20_PLUS).get("#text").getAsInt();
         int Pass40Plus = player.getAsJsonObject(STATS).getAsJsonObject(PASS_40_PLUS).get("#text").getAsInt();
         int PassSacks = player.getAsJsonObject(STATS).getAsJsonObject(PASS_SACKS).get("#text").getAsInt();
         int PassSacksY = player.getAsJsonObject(STATS).getAsJsonObject(PASS_SACK_Y).get("#text").getAsInt();
-        int QBRating = player.getAsJsonObject(STATS).getAsJsonObject(QBR_RATING).get("#text").getAsInt();
+        double QBRating = player.getAsJsonObject(STATS).getAsJsonObject(QB_RATING).get("#text").getAsDouble();
 
         int Targets = player.getAsJsonObject(STATS).getAsJsonObject(TARGETS).get("#text").getAsInt();
         int Receptions = player.getAsJsonObject(STATS).getAsJsonObject(RECEPTIONS).get("#text").getAsInt();
         int RecYds = player.getAsJsonObject(STATS).getAsJsonObject(REC_YARDS).get("#text").getAsInt();
-        int RecAvg = player.getAsJsonObject(STATS).getAsJsonObject(REC_AVERAGE).get("#text").getAsInt();
+        double RecAvg = player.getAsJsonObject(STATS).getAsJsonObject(REC_AVERAGE).get("#text").getAsDouble();
         int RecTD = player.getAsJsonObject(STATS).getAsJsonObject(REC_TD).get("#text").getAsInt();
         int RecLng = player.getAsJsonObject(STATS).getAsJsonObject(REC_LNG).get("#text").getAsInt();
         int Rec20Plus = player.getAsJsonObject(STATS).getAsJsonObject(REC_20_PLUS).get("#text").getAsInt();
@@ -228,7 +228,7 @@ public class NFLCpsCollector implements CollectorGeneric {
 
         int RushAtt = player.getAsJsonObject(STATS).getAsJsonObject(RUSH_ATTEMPTS).get("#text").getAsInt();
         int RushYds = player.getAsJsonObject(STATS).getAsJsonObject(RUSH_YARDS).get("#text").getAsInt();
-        int RushAvg = player.getAsJsonObject(STATS).getAsJsonObject(RUSH_AVERAGE).get("#text").getAsInt();
+        double RushAvg = player.getAsJsonObject(STATS).getAsJsonObject(RUSH_AVERAGE).get("#text").getAsDouble();
         int RushTD = player.getAsJsonObject(STATS).getAsJsonObject(RUSH_TD).get("#text").getAsInt();
         int RushLng = player.getAsJsonObject(STATS).getAsJsonObject(RUSH_LNG).get("#text").getAsInt();
         int Rush20Plus = player.getAsJsonObject(STATS).getAsJsonObject(RUSH_20_PLUS).get("#text").getAsInt();
@@ -238,14 +238,14 @@ public class NFLCpsCollector implements CollectorGeneric {
         int TackleSolo = player.getAsJsonObject(STATS).getAsJsonObject(TACKLE_SOLO).get("#text").getAsInt();
         int TackleTotal = player.getAsJsonObject(STATS).getAsJsonObject(TACKLE_TOTAL).get("#text").getAsInt();
         int TackleAst = player.getAsJsonObject(STATS).getAsJsonObject(TACKLE_AST).get("#text").getAsInt();
-        int Sacks = player.getAsJsonObject(STATS).getAsJsonObject(SACKS).get("#text").getAsInt();
+        double Sacks = player.getAsJsonObject(STATS).getAsJsonObject(SACKS).get("#text").getAsDouble();
         int SackYds = player.getAsJsonObject(STATS).getAsJsonObject(SACK_YDS).get("#text").getAsInt();
         int Safeties = player.getAsJsonObject(STATS).getAsJsonObject(SAFETIES).get("#text").getAsInt();
 
         int Interceptions = player.getAsJsonObject(STATS).getAsJsonObject(INTERCEPTIONS).get("#text").getAsInt();
         int IntTD = player.getAsJsonObject(STATS).getAsJsonObject(INT_TD).get("#text").getAsInt();
         int IntYds = player.getAsJsonObject(STATS).getAsJsonObject(INT_YDS).get("#text").getAsInt();
-        int IntAvg = player.getAsJsonObject(STATS).getAsJsonObject(INT_AVERAGE).get("#text").getAsInt();
+        double IntAvg = player.getAsJsonObject(STATS).getAsJsonObject(INT_AVERAGE).get("#text").getAsDouble();
         int IntLng = player.getAsJsonObject(STATS).getAsJsonObject(INT_LNG).get("#text").getAsInt();
         int PassesDefended = player.getAsJsonObject(STATS).getAsJsonObject(PASSES_DEFENDED).get("#text").getAsInt();
 
@@ -260,7 +260,7 @@ public class NFLCpsCollector implements CollectorGeneric {
 
         int KrRet = player.getAsJsonObject(STATS).getAsJsonObject(KR_RET).get("#text").getAsInt();
         int KrYds = player.getAsJsonObject(STATS).getAsJsonObject(KR_YDS).get("#text").getAsInt();
-        int KrAvg = player.getAsJsonObject(STATS).getAsJsonObject(KR_AVG).get("#text").getAsInt();
+        double KrAvg = player.getAsJsonObject(STATS).getAsJsonObject(KR_AVG).get("#text").getAsDouble();
         int KrLng = player.getAsJsonObject(STATS).getAsJsonObject(KR_LNG).get("#text").getAsInt();
         int KrTD = player.getAsJsonObject(STATS).getAsJsonObject(KR_TD).get("#text").getAsInt();
         int Kr20Plus = player.getAsJsonObject(STATS).getAsJsonObject(KR_20_PLUS).get("#text").getAsInt();
@@ -271,19 +271,19 @@ public class NFLCpsCollector implements CollectorGeneric {
         int Kickoffs = player.getAsJsonObject(STATS).getAsJsonObject(KICKOFFS).get("#text").getAsInt();
         int KoYds = player.getAsJsonObject(STATS).getAsJsonObject(KO_YDS).get("#text").getAsInt();
         int KoOOB = player.getAsJsonObject(STATS).getAsJsonObject(KO_OOB).get("#text").getAsInt();
-        int KoAvg = player.getAsJsonObject(STATS).getAsJsonObject(KO_AVG).get("#text").getAsInt();
+        double KoAvg = player.getAsJsonObject(STATS).getAsJsonObject(KO_AVG).get("#text").getAsDouble();
         int KoTB = player.getAsJsonObject(STATS).getAsJsonObject(KO_TB).get("#text").getAsInt();
-        int KoPct = player.getAsJsonObject(STATS).getAsJsonObject(KO_PCT).get("#text").getAsInt();
+        double KoPct = player.getAsJsonObject(STATS).getAsJsonObject(KO_PCT).get("#text").getAsDouble();
         int KoRet = player.getAsJsonObject(STATS).getAsJsonObject(KO_RET).get("#text").getAsInt();
         int KoRetYds = player.getAsJsonObject(STATS).getAsJsonObject(KO_RET_YDS).get("#text").getAsInt();
-        int KoRetAvgYds = player.getAsJsonObject(STATS).getAsJsonObject(KO_RET_AVG_YDS).get("#text").getAsInt();
+        double KoRetAvgYds = player.getAsJsonObject(STATS).getAsJsonObject(KO_RET_AVG_YDS).get("#text").getAsDouble();
         int KoTD = player.getAsJsonObject(STATS).getAsJsonObject(KO_TD).get("#text").getAsInt();
         int KoOS = player.getAsJsonObject(STATS).getAsJsonObject(KO_OS).get("#text").getAsInt();
         int KoOSR = player.getAsJsonObject(STATS).getAsJsonObject(KO_OSR).get("#text").getAsInt();
 
         int PrRet = player.getAsJsonObject(STATS).getAsJsonObject(PR_RET).get("#text").getAsInt();
         int PrYds = player.getAsJsonObject(STATS).getAsJsonObject(PR_YDS).get("#text").getAsInt();
-        int PrAvg = player.getAsJsonObject(STATS).getAsJsonObject(PR_AVG).get("#text").getAsInt();
+        double PrAvg = player.getAsJsonObject(STATS).getAsJsonObject(PR_AVG).get("#text").getAsDouble();
         int PrLng = player.getAsJsonObject(STATS).getAsJsonObject(PR_LNG).get("#text").getAsInt();
         int PrTD = player.getAsJsonObject(STATS).getAsJsonObject(PR_TD).get("#text").getAsInt();
         int Pr20Plus = player.getAsJsonObject(STATS).getAsJsonObject(PR_20_PLUS).get("#text").getAsInt();
@@ -295,19 +295,19 @@ public class NFLCpsCollector implements CollectorGeneric {
         int PuntYds = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_YDS).get("#text").getAsInt();
         int PuntNetYds = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_NET_YDS).get("#text").getAsInt();
         int PuntLng = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_LNG).get("#text").getAsInt();
-        int PuntAvg = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_AVG).get("#text").getAsInt();
-        int PuntNetAvg = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_NET_AVG).get("#text").getAsInt();
+        double PuntAvg = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_AVG).get("#text").getAsDouble();
+        double PuntNetAvg = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_NET_AVG).get("#text").getAsDouble();
         int PuntBlk = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_BLK).get("#text").getAsInt();
         int PuntOOB = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_OOB).get("#text").getAsInt();
         int PuntDown = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_DOWN).get("#text").getAsInt();
         int PuntIn20 = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_IN_20).get("#text").getAsInt();
-        int PuntIn20Pct = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_IN_20_PCT).get("#text").getAsInt();
+        double PuntIn20Pct = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_IN_20_PCT).get("#text").getAsDouble();
         int PuntTB = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_TB).get("#text").getAsInt();
-        int PuntTBPct = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_TB_PCT).get("#text").getAsInt();
+        double PuntTBPct = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_TB_PCT).get("#text").getAsDouble();
         int PuntFC = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_FC).get("#text").getAsInt();
         int PuntRet = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_RET).get("#text").getAsInt();
         int PuntRetYds = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_RET_YDS).get("#text").getAsInt();
-        int PuntRetAvg = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_RET_AVG).get("#text").getAsInt();
+        double PuntRetAvg = player.getAsJsonObject(STATS).getAsJsonObject(PUNT_RET_AVG).get("#text").getAsDouble();
 
         int Stuffs = player.getAsJsonObject(STATS).getAsJsonObject(STUFFS).get("#text").getAsInt();
         int StuffYds = player.getAsJsonObject(STATS).getAsJsonObject(STUFF_YDS).get("#text").getAsInt();
@@ -317,28 +317,28 @@ public class NFLCpsCollector implements CollectorGeneric {
         int FgBlk = player.getAsJsonObject(STATS).getAsJsonObject(FG_BLK).get("#text").getAsInt();
         int FgMade = player.getAsJsonObject(STATS).getAsJsonObject(FG_MADE).get("#text").getAsInt();
         int FgAtt = player.getAsJsonObject(STATS).getAsJsonObject(FG_ATT).get("#text").getAsInt();
-        int FgPct = player.getAsJsonObject(STATS).getAsJsonObject(FG_PCT).get("#text").getAsInt();
+        double FgPct = player.getAsJsonObject(STATS).getAsJsonObject(FG_PCT).get("#text").getAsDouble();
         int FgMade1_19 = player.getAsJsonObject(STATS).getAsJsonObject(FG_MADE_1_19).get("#text").getAsInt();
         int FgAtt1_19 = player.getAsJsonObject(STATS).getAsJsonObject(FG_ATT_1_19).get("#text").getAsInt();
-        int Fg1_19Pct = player.getAsJsonObject(STATS).getAsJsonObject(FG_1_19_PCT).get("#text").getAsInt();
+        double Fg1_19Pct = player.getAsJsonObject(STATS).getAsJsonObject(FG_1_19_PCT).get("#text").getAsDouble();
         int FgMade20_29 = player.getAsJsonObject(STATS).getAsJsonObject(FG_MADE_20_29).get("#text").getAsInt();
         int FgAtt20_29 = player.getAsJsonObject(STATS).getAsJsonObject(FG_ATT_20_29).get("#text").getAsInt();
-        int Fg20_29Pct = player.getAsJsonObject(STATS).getAsJsonObject(FG_20_29_PCT).get("#text").getAsInt();
+        double Fg20_29Pct = player.getAsJsonObject(STATS).getAsJsonObject(FG_20_29_PCT).get("#text").getAsDouble();
         int FgMade30_39 = player.getAsJsonObject(STATS).getAsJsonObject(FG_MADE_30_39).get("#text").getAsInt();
         int FgAtt30_39 = player.getAsJsonObject(STATS).getAsJsonObject(FG_ATT_30_39).get("#text").getAsInt();
-        int Fg30_39Pct = player.getAsJsonObject(STATS).getAsJsonObject(FG_30_39_PCT).get("#text").getAsInt();
+        double Fg30_39Pct = player.getAsJsonObject(STATS).getAsJsonObject(FG_30_39_PCT).get("#text").getAsDouble();
         int FgMade40_49 = player.getAsJsonObject(STATS).getAsJsonObject(FG_MADE_40_49).get("#text").getAsInt();
         int FgAtt40_49 = player.getAsJsonObject(STATS).getAsJsonObject(FG_ATT_40_49).get("#text").getAsInt();
-        int Fg40_49Pct = player.getAsJsonObject(STATS).getAsJsonObject(FG_40_49_PCT).get("#text").getAsInt();
+        double Fg40_49Pct = player.getAsJsonObject(STATS).getAsJsonObject(FG_40_49_PCT).get("#text").getAsDouble();
         int FgMade50Plus = player.getAsJsonObject(STATS).getAsJsonObject(FG_MADE_50_PLUS).get("#text").getAsInt();
         int FgAtt50Plus = player.getAsJsonObject(STATS).getAsJsonObject(FG_ATT_50_PLUS).get("#text").getAsInt();
-        int Fg50PlusPct = player.getAsJsonObject(STATS).getAsJsonObject(FG_50_PLUS_PCT).get("#text").getAsInt();
+        double Fg50PlusPct = player.getAsJsonObject(STATS).getAsJsonObject(FG_50_PLUS_PCT).get("#text").getAsDouble();
         int FgLng = player.getAsJsonObject(STATS).getAsJsonObject(FG_LNG).get("#text").getAsInt();
 
         int XpBlk = player.getAsJsonObject(STATS).getAsJsonObject(XP_BLK).get("#text").getAsInt();
         int XpMade = player.getAsJsonObject(STATS).getAsJsonObject(XP_MADE).get("#text").getAsInt();
         int XpAtt = player.getAsJsonObject(STATS).getAsJsonObject(XP_ATT).get("#text").getAsInt();
-        int XpPct = player.getAsJsonObject(STATS).getAsJsonObject(XP_PCT).get("#text").getAsInt();
+        double XpPct = player.getAsJsonObject(STATS).getAsJsonObject(XP_PCT).get("#text").getAsDouble();
 
         int TwoPtAtt = player.getAsJsonObject(STATS).getAsJsonObject(TWO_PT_ATT).get("#text").getAsInt();
         int TwoPtMade = player.getAsJsonObject(STATS).getAsJsonObject(TWO_PT_MADE).get("#text").getAsInt();
